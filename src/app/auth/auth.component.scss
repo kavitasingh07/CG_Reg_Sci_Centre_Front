@@ -1,0 +1,16 @@
+.main-container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+.colorclass
+  {
+    background: rgb(247, 246, 251);
+    background: linear-gradient(90deg, rgb(221, 221, 227) 0%, rgba(9,90,121,1) 35%, rgba(0,212,255,1) 100%);
+  }

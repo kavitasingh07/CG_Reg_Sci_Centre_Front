@@ -1,0 +1,66 @@
+<div class="main-container">
+    <mat-toolbar class="colorclass">
+        <div class="navbar-header">
+            <img src="assets/images/cg-logo.png" alt="homepage" class="light-logo" style="width: 50px;">            
+            <span fxShow="false" fxShow.gt-xs>
+            </span>
+        </div>        
+        <button mat-icon-button (click)="snav.toggle()" value="sidebarclosed">
+            <mat-icon>menu</mat-icon>
+        </button>
+        <span fxFlex></span>
+        <span style="flex: 1 1 auto;"></span>
+        <div id="profileImage" [matMenuTriggerFor]="profile" style="font-size: 15px;">
+        </div>
+        <mat-menu #profile="matMenu" class="mymegamenu">
+            <button mat-menu-item>
+                <mat-icon>settings</mat-icon> Settings
+            </button>
+            <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active">
+                <mat-icon>account_box</mat-icon> पासवर्ड बदलें
+            </button>
+            <button mat-menu-item >
+                <mat-icon>exit_to_app</mat-icon>लॉगआउट
+            </button>
+        </mat-menu>
+    </mat-toolbar>
+    <mat-sidenav-container class="example-sidenav-container" [style.marginTop.px]="mobileQuery.matches ? 0 : 0">
+        <mat-sidenav #snav id="snav" class="dark-sidebar pl-xs" [mode]="mobileQuery.matches ? 'side' : 'over'" fixedTopGap="0" [opened]="mobileQuery.matches" [disableClose]="mobileQuery.matches">
+
+            <div class="user-profile" style="background-color: rgb(249, 252, 252);">
+                <div class="profile-img">
+                    <img src="assets/images/kavita.jpg" alt="user">
+                    <div class="profileImage">
+                    </div>
+                </div>
+                <div class="profile-text"><a [matMenuTriggerFor]="sdprofile" class="">
+                       <mat-icon>arrow_drop_down</mat-icon></a></div>
+                <mat-menu #sdprofile="matMenu" class="mymegamenu">
+                    <!-- <button mat-menu-item>
+                        <mat-icon>settings</mat-icon> Settings
+                    </button> -->
+                    <button mat-menu-item [routerLink]="['/profile']" routerLinkActive="router-link-active">
+                        <mat-icon>account_box</mat-icon> Change Password
+                    </button>
+
+                    <button mat-menu-item >
+                        <mat-icon>exit_to_app</mat-icon> Logout
+                    </button>
+                </mat-menu>
+            </div>
+
+            
+        </mat-sidenav>
+
+        <mat-sidenav-content class="page-wrapper">
+            <div class="page-content">
+                <router-outlet>
+                   
+                </router-outlet>              
+            </div>
+        </mat-sidenav-content>
+    </mat-sidenav-container>
+
+    
+</div>
+
