@@ -19,8 +19,6 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @include mat-core();
 
-
-
 $ama-yellow: (
   50: $yellow,
   100: #ECECEC,
@@ -124,11 +122,11 @@ $ama-theme: mat-light-theme($ama-primary, $ama-accent, $ama-warn);
 @include angular-material-theme($ama-theme);
 
 button.mat-menu-item {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 button.mat-menu-item:hover:not([disabled]), .mat-menu-item.cdk-program-focused:not([disabled]), .mat-menu-item.cdk-keyboard-focused:not([disabled]), .mat-menu-item-highlighted:not([disabled]) {
-  font-size: 16px;
+  font-size: 12px;
 }
 
 .mat-expansion-panel:not([class*=mat-elevation-z]) {
@@ -447,7 +445,8 @@ mat-tab-body div.mat-tab-body-content {
 }
 
 .material-icons {
-  font-size: 28px;
+  font-size: 20px;
+  color: #050c72;
 }
 
 button.mat-mini-fab .mat-button-wrapper {
@@ -1006,6 +1005,7 @@ th.mat-header-cell:first-of-type, td.mat-cell:first-of-type, td.mat-footer-cell:
 
 .mat-expansion-panel-header-title {
   color: rgb(139 139 139);
+  font-size: 14px;
 }
 
 

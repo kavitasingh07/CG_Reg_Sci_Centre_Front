@@ -7,6 +7,9 @@ import { MaterialModule } from 'src/app/material-module';
 import { DepartmententryComponent } from './departmententry/departmententry.component';
 import { DesignationentryComponent } from './designationentry/designationentry.component';
 import { ManageemployeeComponent } from './manageemployee/manageemployee.component';
+import { SalaryentryComponent } from './salaryentry/salaryentry.component';
+import { SalarycalculationComponent } from './salarycalculation/salarycalculation.component';
+import { LeavecalculationComponent } from './leavecalculation/leavecalculation.component';
 
 
 @NgModule({
@@ -15,7 +18,10 @@ import { ManageemployeeComponent } from './manageemployee/manageemployee.compone
     EmployeeentryComponent,
     DepartmententryComponent,
     DesignationentryComponent,
-    ManageemployeeComponent
+    ManageemployeeComponent,
+    SalaryentryComponent,
+    SalarycalculationComponent,
+    LeavecalculationComponent
   ],
   imports: [
     CommonModule,

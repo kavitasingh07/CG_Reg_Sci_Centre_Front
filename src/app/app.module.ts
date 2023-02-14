@@ -4,6 +4,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { JwtModule } from '@auth0/angular-jwt';
 import { MaterialModule } from './material-module';
 import { AuthComponent } from './auth/auth.component';
 import { LoginComponent } from './login/login.component';
@@ -27,6 +28,16 @@ FullCalendarModule.registerPlugins([interactionPlugin, dayGridPlugin]);
     NgbModule,
     FullCalendarModule,
     HttpClientModule,
+
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: function tokenGetter() {
+          return sessionStorage.getItem('token');
+        },
+        // whitelistedDomains: ['localhost:3000'],
+        // blacklistedRoutes: ['http://localhost:3000/auth/login']
+      }
+    }),
   ],
   providers: [],
   bootstrap: [AppComponent]

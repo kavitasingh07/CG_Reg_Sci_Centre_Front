@@ -15,41 +15,63 @@
                                             for Chhattisgarh Regional Science Center </h1>
                                 </div>
                                 <div class="h4 text-center" style="color: rgb(5, 43, 77);"><strong>Login</strong></div>
-                                <form>                             
+                                <form [formGroup]="loginForm" (ngSubmit)="login()">                            
                                     <div class="input-group input-group-sm mb-4">
                                         <div class="input-group-prepend">
-                                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-user"></i></span>
+                                          <span class="input-group-text"><i class="fa fa-user"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" placeholder="EmployeeID" aria-label="EmployeeID" >
+                                        <input type="text" class="form-control" placeholder="Please Enter EmployeeID" aria-label="EmployeeID" 
+                                            formControlName="employeeid"  maxlength="10">
+                                            <mat-error *ngIf="isValidInput('employeeid')">
+                                                <mat-error *ngIf="loginForm.controls['employeeid'].errors!.required">
+                                                    Employee ID is<strong> Compulsory </strong>.
+                                                </mat-error>
+                                            </mat-error>
                                       </div>
                                       <div class="input-group input-group-sm mb-4">
                                         <div class="input-group-prepend">
-                                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-asterisk"></i></span>
+                                          <span class="input-group-text"><i class="fa fa-asterisk"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" placeholder="Password" aria-label="Password">
-                                      </div>                                      
-                                      <div class="input-group input-group-sm mb-4">
-                                        <div class="input-group-prepend">
-                                          <span class="input-group-text" id="basic-addon1"><i class="fa fa-puzzle-piece"></i></span>
+                                        <input type="password" class="form-control" placeholder="Please Enter Password" aria-label="Password"
+                                        formControlName="password"  maxlength="10" (change)="onPassChangeEvent($event)" type="{{showPassword ? 'text':'password'}}">
+                                        <span class="input-group-text"><input class="form-check-input" type="checkbox" (change)="showPassword=!showPassword"
+                                                id="login-rem" name="remember">&nbsp;<i class="fa fa-eye" aria-hidden="true"></i></span>
+                                                <mat-error *ngIf="isValidInput('password')">
+                                                    <mat-error *ngIf="loginForm.controls['password'].errors!.required">
+                                                        Password is<strong> Compulsory </strong>.
+                                                    </mat-error>
+                                                </mat-error>        
                                         </div>
-                                        <input type="text" class="form-control" placeholder="Captcha" aria-label="Captcha" aria-describedby="basic-addon1">
-                                      </div>
-
-
-                                      <div class="form-group form-actions">
-                                        <button type="submit" class="btn btn-warning" id="loginButton">Login   </button>
+                                      <div class="col-12">
+                                        <div class="form-floating">
+                                            <div #dataContainer class="svg-img"></div>
+                                            <button type="button" (click)="svgcaptcha()" class="input-group-text">
+                                                <mat-icon>replay</mat-icon> 
+                                            </button>
+                                        </div>
+                                        <br>
+                                        <div class="input-group input-group-sm mb-4">
+                                            <div class="input-group-prepend">
+                                              <span class="input-group-text"><i class="fa fa-puzzle-piece"></i></span>
+                                            </div>
+                                            <input type="text" class="form-control" placeholder="Please Enter Captcha" aria-label="Captcha" aria-describedby="basic-addon1"
+                                            formControlName="captcha"  maxlength="10">
+                                          </div>
+                                          <div class="text-danger text-center" *ngIf="showInvalid"><strong>
+                                            {{errorText}}</strong></div>
+                                            <p class="text-danger text-center" *ngIf="showCaptchaError"><strong>Captcha is Wrong</strong></p>
                                     </div>
-                                   
-                                </form>                                 
-                                <a href="" class="text-danger text-center h6 bold-text" style="text-decoration:underline"><i class="fa fa-hand-o-right" aria-hidden="true"></i> &nbsp;Click here to access APAR Module</a>
-                                    
+                                      <div class="form-group form-actions">
+                                        <!-- <a [routerLink]="['/hrmsadmin/dashboard']" class="btn btn-warning text-light rounded-pill py-2 px-4 ms-3">Login</a> -->
+                                         <button type="submit" class="btn btn-warning text-light rounded-pill py-2 px-4 ms-3" id="loginButton">Login   </button> 
+                                    </div>
+                                </form>  
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-        
+        </div>        
     </div>
 
 

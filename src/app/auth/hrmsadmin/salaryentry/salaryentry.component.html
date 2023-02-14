@@ -1,0 +1,109 @@
+<div class="row match-height">
+    <div class="col-12">
+        <div class="card">
+            <div class="bg-secondary p-1 text-white text-center">Note: <i
+                class="fa fa-asterisk text-danger" aria-hidden="true"></i>fields are Compulsory</div>
+                <mat-card-title class="text-center">Enter Salary Details for New Employee Here</mat-card-title>
+                <hr>
+                <div class="card-content">
+                    <div class="card-body">
+                        <h3 class="text-left">Employee Details</h3>
+                        <form class="form" [formGroup]="salaryentryform">
+                            <div class="row">
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                    <mat-label>Employee ID</mat-label>
+                                    <mat-select formControlName="empid">                                   
+                                            <mat-option>CRSC000001</mat-option>
+                                            <mat-option>CRSC000002</mat-option>
+                                            <mat-option>CRSC000003</mat-option>
+                                            <mat-option>CRSC000004</mat-option>
+                                    </mat-select>
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="card mb-4">
+                                <div class="card-header bg-primary text-white">
+                                    Employee Details
+                                </div>
+                                <div class="card-body">
+                                    <table id="datatablesSimple">
+                                        <tbody>
+                                            <tr>
+                                                <th>Emp. Name</th>
+                                                <th>Designation</th>
+                                                <th>Joining Date</th>
+                                                <th>Employee Type</th>
+                                            </tr>
+                                            <tr>
+                                                <td>Ajay</td>
+                                                <td>Data Entry Operator</td>
+                                                <td>01-01-2023</td>  
+                                                <td>JRF</td>                            
+                                            </tr>                                            
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>PAN No.
+                                        </mat-label>
+                                        <input matInput formControlName="panno"  maxlength="10">                                                                               
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Pay Level
+                                        </mat-label>
+                                        <mat-select formControlName="empid">                                   
+                                            <mat-option>Pay Level 1</mat-option>
+                                            <mat-option>Pay Level 2</mat-option>
+                                            <mat-option>Pay Level 3</mat-option>
+                                            <mat-option>Pay Level 4</mat-option>
+                                    </mat-select>                                                                              
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                        <mat-label>Basic Grade Pay
+                                        </mat-label>
+                                        <input matInput formControlName="basicgp"  maxlength="10">                                                                               
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                        <mat-label> Travelling Allowance
+                                        </mat-label>
+                                        <input matInput formControlName="travelallownace"  maxlength="10">                                                                               
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                        <mat-label> HRA
+                                        </mat-label>
+                                        <input matInput formControlName="HRA"  maxlength="10">                                                                               
+                                    </mat-form-field>
+                                </div>
+                                <div class="col-md-3">  
+                                    <mat-form-field appearance="outline">
+                                        <mat-label> Conveyance Allowance
+                                        </mat-label>
+                                        <input matInput formControlName="ConveyanceAllowance"  maxlength="10">                                                                               
+                                    </mat-form-field>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-4">
+                                <button type="submit" class="btn btn-primary">Add Details</button> &nbsp;&nbsp; 
+                                </div>   
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>

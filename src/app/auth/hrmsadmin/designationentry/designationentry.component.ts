@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup, Validators, FormGroupDirective  } from '@angular/forms';
+import Swal from 'sweetalert2';
+
 
 @Component({
   selector: 'app-designationentry',
@@ -7,7 +10,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DesignationentryComponent implements OnInit {
 
-  constructor() { }
+  public designationentryform: FormGroup ;
+  constructor(private fb: FormBuilder) { this.designationentryform = this.fb.group({
+    departmentname: ['', Validators.required],
+    designation: ['', Validators.required],
+  }
+  )};
 
   ngOnInit(): void {
   }

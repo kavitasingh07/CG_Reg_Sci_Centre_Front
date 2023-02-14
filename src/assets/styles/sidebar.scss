@@ -26,7 +26,7 @@ mat-sidenav {
             margin-bottom: 10px;
             align-items: center;
             display: flex;
-            font-size: 15px;
+            font-size: 12px;
             white-space: nowrap;
             color: $sidebar-text;
             mat-icon:not(.dd-icon) {
@@ -147,7 +147,7 @@ use profile section
             color: $white!important;
             width: 100%;
             padding: 6px 30px;
-            background: linear-gradient(to right, #100a81, #220584) !important;
+            background: linear-gradient(to right, #625edc, #5a3cc7) !important;
             color: #fff;
             display: block;
             white-space: nowrap;
